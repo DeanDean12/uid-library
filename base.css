@@ -18,12 +18,14 @@ footer{
     width: 100%;
     display:block;
     margin:auto;
+    text-align: center;
 }
 
 ul.footer-links li{
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
+	display: inline;
 }
 
 /*
