@@ -24,13 +24,9 @@ html, body{
 }
 
 
-.wrapper{
-    min-height: 100%;
-    position: relative;
-}
-
 .main-content{
-    padding-bottom: 230px;
+    padding: 10px;
+    min-height: 100%;
 }
 
 footer{
@@ -38,17 +34,16 @@ footer{
     min-height: 230px;
     width: 100%;
     display:block;
-    margin:auto;
+    margin:0;
     text-align: center;
     word-wrap: break-word;
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
 }
 
-footer container{
-    margin: auto;
-    padding: 35px;
+ul.footer-links{
+    padding: 10px;
 }
 
 ul.footer-links li{
@@ -59,6 +54,7 @@ ul.footer-links li{
 }
 
 ul.footer-links li a{
+    margin: 10;
 	padding: 30px 30px 30px 30px;
 	color: #D4DADD;
 }
