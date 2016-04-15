@@ -24,7 +24,7 @@ footer{
 ul.footer-links li{
 	text-align: center;
 	list-style-type: none;
-	padding: 0;
+	padding: 10;
 	margin: 0;
 	display: inline;
 }
