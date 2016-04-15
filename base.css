@@ -1,5 +1,16 @@
 @import url("bootstrap-3.3.6-dist/css/bootstrap.css");
 
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: proxima-nova-alt,sans-serif;
+    font-size: 1.15em;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #444D56;
+}
+
 .banner-header{
     background-color: #F2590D;;
 }
@@ -12,16 +23,27 @@
     margin: auto;
 }
 
+
+.wrapper{
+    min-height: 100%;
+    position: relative;
+}
+
+.main-content{
+    padding-bottom: 230px;
+}
+
 footer{
     background: #131f33;
-    //min-height: 230px;
+    min-height: 230px;
     width: 100%;
     display:block;
     margin:auto;
     text-align: center;
     word-wrap: break-word;
-    position: fixed;
-    bottom: 0px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 footer container{
@@ -75,15 +97,7 @@ footer-branding, .branding-wordmark {
 }
 */
 
-body {
-    font-family: proxima-nova-alt,sans-serif;
-    font-size: 1.15em;
-    font-weight: 400;
-    line-height: 1.6;
-    color: #444D56;
-}
 
-//.footer-menu-resources{width:100%;margin:0}
 
 /*a{
     background-color: transparent;
