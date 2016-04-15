@@ -20,8 +20,8 @@ footer{
     margin:auto;
 }
 
-.footer-links{
-	list-style: none;
+ul.footer-links li{
+	list-style-type: none;
 	padding: 0;
 	margin: 0;
 }
