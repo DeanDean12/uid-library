@@ -20,6 +20,8 @@ footer{
     margin:auto;
     text-align: center;
     word-wrap: break-word;
+    position: fixed;
+    bottom: 0px;
 }
 
 footer container{
