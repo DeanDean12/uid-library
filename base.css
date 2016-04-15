@@ -19,6 +19,7 @@ footer{
     display:block;
     margin:auto;
     text-align: center;
+    word-wrap: break-word;
 }
 
 ul.footer-links li{
