@@ -22,6 +22,11 @@ footer{
     word-wrap: break-word;
 }
 
+footer container{
+    margin: auto;
+    padding: 35px;
+}
+
 ul.footer-links li{
 	text-align: center;
 	list-style-type: none;
