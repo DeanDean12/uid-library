@@ -22,6 +22,7 @@ footer{
 }
 
 ul.footer-links li{
+	text-align: center;
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
