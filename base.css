@@ -167,6 +167,10 @@ input[type="text"]:focus{
     width: 80%;
 }
 
+.active-search-tab{
+    background-color: purple;
+}
+
 .search-fieldset{
     margin: 1.0em auto;
     display: block;
@@ -179,6 +183,10 @@ input[type="text"]:focus{
     padding: 10px;
     color: #263B54;
     background-color: #FA6300;
+}
+
+.tabbed-search-box{
+    width: 75%;
 }
 
 /*

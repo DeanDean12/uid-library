@@ -39,13 +39,13 @@
 <div>
 
   <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Basic Search</a></li>
-    <li role="presentation"><a href="#advanced_search" aria-controls="advanced_search" role="tab" data-toggle="tab">Advanced Search</a></li>
+  <ul class="nav nav-tabs tabbed-search-box" role="tablist">
+    <li role="presentation" class="active"><a href="#home" class="search-tab" aria-controls="home" role="tab" data-toggle="tab">Basic Search</a></li>
+    <li role="presentation"><a href="#advanced_search" class="search-tab" aria-controls="advanced_search" role="tab" data-toggle="tab">Advanced Search</a></li>
   </ul>
 
   <!-- Tab panes -->
-  <div class="tab-content">
+  <div class="tab-content tabbed-search-box">
     <div role="tabpanel" class="tab-pane active" id="home">
 		<form class="search-form" onsubmit="fillTable()">
 			<input type="text" placeholder="Enter query here" class="main-search-field">
@@ -53,9 +53,9 @@
 		</form>
     </div>
     <div role="tabpanel" class="tab-pane" id="advanced_search">
-    	<div class="collapse in" style="height: auto;" id="filter-panel">
-		<div class="panel panel-default">
-		<div class="panel-content">
+    	<div style="height: auto;" id="filter-panel">
+		<div>
+		<div>
 		<form id="build_search" name="build_search" onsubmit="return false;">
 		<input name="csrfmiddlewaretoken" value="e1UjQItxkjh3snTTyam2wAf3XBrRSW7j" type="hidden">
 		<fieldset id="criteria_form" class="search-fieldset">
@@ -501,6 +501,21 @@
 		$(document).ready(function(){
 			$("#example").css("visibility", "hidden");
 		});
+
+		$('.search-tab').click(
+			//alert("weee");
+			function(){
+				//alert($(this).parent().parent().html());
+				if(!$(this).parent().parent().hasClass("active")){
+					alert("yes");
+					//$('#home').addClass("active-search-tab");
+					$(this).parent().parent().removeClass("active-search-tab");
+				}
+				else{
+					$(this).parent().parent().removeClass("active-search-tab");
+				}	
+			}
+		);
 
 		$('#example-submit').click(function(event) { 
 	   		//if only button on page you can have just $('button')
