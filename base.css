@@ -105,7 +105,17 @@ a:hover{
 
 }
 
-button, input[type="submit"]{
+.standalone_link:hover{
+    outline: #FA2 solid 3px;
+
+}
+
+.standalone_link:focus {
+    outline: #FA2 solid 3px;
+}
+
+
+#bootstrap-overrides button, input[type="submit"]{
     display: inline-block;
     padding: .4em 1.25em .35em;
     border-radius: 5em;
@@ -116,7 +126,7 @@ button, input[type="submit"]{
     transition: all 250ms ease-out;
 }
 
-button{
+#bootstrap-overrides button{
    /* background-color: #D4DADD;
     color: #363d44;*/
     color: white;
@@ -125,7 +135,7 @@ button{
     border: none;
 }
 
-button:hover{ 
+#bootstrap-overrides button:hover{ 
     /*background-color: #6e7887;*/
     color: #263B54;
     background-color: #FA6300;
@@ -135,6 +145,7 @@ button:hover{
     /*background-color: #FA6300;*/
     color: #263B54;
     background-color: #FA6300;
+    border: none;
 }
 
 .submit_button:hover, input[type="submit"]:hover{ 
@@ -172,7 +183,7 @@ input[type="text"]:focus{
 }
 
 .search-fieldset{
-    margin: 1.0em auto;
+    margin: auto;
     display: block;
     width: 80%;
     text-align: center;
@@ -188,6 +199,48 @@ input[type="text"]:focus{
 .tabbed-search-box{
     width: 75%;
 }
+
+.tabbed-search-box .tab-pane{ 
+    border: 1px solid #D6D6D6;
+    border-top: 0;  
+}
+
+#tabbed-box li a { 
+    border-color: #D6D6D6;
+    background-color: #90ABBD; 
+}
+
+#tabbed-box li.active a { 
+    border-bottom-color: transparent;
+    background-color: #E5EBF0;
+}
+
+
+.tabbed-search-box .tab-pane{ 
+    border: 1px solid #D6D6D6;
+    border-top: 0;
+    background-color: #E5EBF0;
+}
+
+/*.tab-content{
+    background-color: yellow;
+    color:#fff;
+    padding:5px
+}
+
+.nav-tabs > li > a{
+  border: medium none;
+  background-color: red;
+}*/
+
+
+
+/*.nav-tabs > li > a:hover{
+  background-color: #303136 !important;
+    border: medium none;
+    border-radius: 0;
+    color:#fff;
+}*/
 
 /*
 .footer-menu-resources-header {
@@ -229,14 +282,6 @@ footer-branding, .branding-wordmark {
 
 
 
-.standalone_link:hover{
-    outline: #FA2 solid 3px;
-
-}
-
-.standalone_link:focus {
-    outline: #FA2 solid 3px;
-}
 
 
 */

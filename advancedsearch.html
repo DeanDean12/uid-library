@@ -6,7 +6,7 @@
 		<script src="bootstrap-3.3.6-dist/js/bootstrap.js"></script>
 
 	</head>
-	<body>
+	<body id="bootstrap-overrides">
 		<!--<div class="main-wrapper">-->
 			<header class="col-xs-12 col-sm-12 col-md-12 col-lg-12 banner-header" role="banner">
 				    <div class="container">
@@ -39,7 +39,7 @@
 <div>
 
   <!-- Nav tabs -->
-  <ul class="nav nav-tabs tabbed-search-box" role="tablist">
+  <ul class="nav nav-tabs" role="tablist" id="tabbed-box">
     <li role="presentation" class="active"><a href="#home" class="search-tab" aria-controls="home" role="tab" data-toggle="tab">Basic Search</a></li>
     <li role="presentation"><a href="#advanced_search" class="search-tab" aria-controls="advanced_search" role="tab" data-toggle="tab">Advanced Search</a></li>
   </ul>
@@ -53,8 +53,6 @@
 		</form>
     </div>
     <div role="tabpanel" class="tab-pane" id="advanced_search">
-    	<div style="height: auto;" id="filter-panel">
-		<div>
 		<div>
 		<form id="build_search" name="build_search" onsubmit="return false;">
 		<input name="csrfmiddlewaretoken" value="e1UjQItxkjh3snTTyam2wAf3XBrRSW7j" type="hidden">
@@ -296,8 +294,6 @@
 
 
 		</div>
-		</div>
-		</div>
 
     </div>
 
@@ -507,7 +503,7 @@
 			function(){
 				//alert($(this).parent().parent().html());
 				if(!$(this).parent().parent().hasClass("active")){
-					alert("yes");
+					//alert("yes");
 					//$('#home').addClass("active-search-tab");
 					$(this).parent().parent().removeClass("active-search-tab");
 				}
