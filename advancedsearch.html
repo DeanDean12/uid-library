@@ -47,10 +47,14 @@
   <!-- Tab panes -->
   <div class="tab-content tabbed-search-box">
     <div role="tabpanel" class="tab-pane active" id="home">
-		<form class="search-form" onsubmit="fillTable()">
-			<input type="text" placeholder="Enter query here" class="main-search-field">
-			<input type="submit" id="example-submit" value="Search">
-		</form>
+    	<!--<div class="container">-->
+			<form class="search-form form-inline" onsubmit="fillTable()">
+				<div class="form-group">
+					<input type="text" placeholder="Enter query here" class="main-search-field form-control">
+					<input type="submit" id="example-submit" value="Search">
+				</div>
+			</form>
+		<!--</div>-->
     </div>
     <div role="tabpanel" class="tab-pane" id="advanced_search">
 		<div>
