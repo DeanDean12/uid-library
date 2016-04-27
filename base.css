@@ -268,6 +268,13 @@ legend{
 .advanced-search{
     padding: 10px 0px 10px 0px;
 }
+
+.right-inner-addon i {
+    position: absolute;
+    right: 0px;
+    padding: 10px 12px;
+    pointer-events: none;
+}
 /*.tab-content{
     background-color: yellow;
     color:#fff;
