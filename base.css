@@ -269,12 +269,20 @@ legend{
     padding: 10px 0px 10px 0px;
 }
 
-.right-inner-addon i {
+.inner-addon {
+    position: relative;
+}
+
+.left-addon .glyphicon {
+    left: 0px;
+}
+
+.inner-addon .glyphicon {
     position: absolute;
-    right: 0px;
-    padding: 10px 12px;
+    padding: 10px;
     pointer-events: none;
 }
+
 /*.tab-content{
     background-color: yellow;
     color:#fff;
