@@ -48,9 +48,9 @@ html, body{
     padding:10px;
 }
 
-.search-form .main-search-field{
+/*.search-form .main-search-field{
     width: 500px;
-}
+}*/
 
 .form-control-inline{
     min-width: 20000px;
@@ -126,10 +126,11 @@ a:hover{
     display: inline-block;
     padding: .4em 1.25em .35em;
     border-radius: 5em;
-    margin: 0 .05em .9em;
+    vertical-align: middle;
+    //margin: 0 .05em .9em;
     font-size: 90%;
-    line-height: normal;
-    font-family: proxima-nova-alt,sans-serif;
+    //line-height: normal;
+    
     transition: all 250ms ease-out;
 }
 
@@ -147,18 +148,29 @@ a:hover{
     color: #263B54;
     background-color: #FA6300;
 }
-
-.submit_button, input[type="submit"]{
+input[type="submit"]{
     /*background-color: #FA6300;*/
     color: #263B54;
     background-color: #FA6300;
     border: none;
 }
 
-.submit_button:hover, input[type="submit"]:hover{ 
+#bootstrap-overrides input[type="submit"]:hover{ 
     /*background-color: #6e7887;*/
     color: #263B54;
     background-color: #FA6300;
+}
+
+#bootstrap-overrides button[type="submit"]{
+    border-radius: 8px;
+}
+
+#bootstrap-overrides #add_search{
+    border-radius: 5em;
+}
+
+#submit-advanced-search{
+    margin-top: 10px;
 }
 
 input[type="text"]:focus{
@@ -172,12 +184,22 @@ input[type="text"]:focus{
     display: block;
 }
 
+#remove_selected{
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
 #search_criteria{
     display: block;
     margin-bottom: 15px;
     margin-left: auto;
     margin-right: auto;
     width: 75%;
+}
+
+#search-criteria-region{
+    display: block;
+    margin-bottom: 100px;
 }
 
 .panel-content{
@@ -233,6 +255,19 @@ input[type="text"]:focus{
   border-bottom: 0;
 }
 
+.search-navigation{
+    padding: 10px 0px 10px 0px;
+}
+
+legend{
+    font-family: proxima-nova-alt,sans-serif;
+    font-weight: 600;
+    color: #6e7887;
+}
+
+.advanced-search{
+    padding: 10px 0px 10px 0px;
+}
 /*.tab-content{
     background-color: yellow;
     color:#fff;

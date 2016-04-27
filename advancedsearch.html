@@ -36,7 +36,7 @@
 
 
 
-<div>
+<div class="search-navigation">
 
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist" id="tabbed-box">
@@ -48,262 +48,104 @@
   <div class="tab-content tabbed-search-box">
     <div role="tabpanel" class="tab-pane active" id="home">
     	<!--<div class="container">-->
-			<form class="search-form form-inline" onsubmit="fillTable()">
+			<form role="form" class="search-form form-inline" onsubmit="fillTable()">
 				<div class="form-group">
-					<input type="text" placeholder="Enter query here" class="main-search-field form-control">
-					<input type="submit" id="example-submit" value="Search">
+					<input type="text" placeholder="Enter Query" class="form-control main-search-field">
+					<button type="submit" class="btn btn-default submit_button" id="example-submit">Search</button>
 				</div>
 			</form>
 		<!--</div>-->
     </div>
     <div role="tabpanel" class="tab-pane" id="advanced_search">
-		<div>
-		<form id="build_search" name="build_search" onsubmit="return false;">
-		<input name="csrfmiddlewaretoken" value="e1UjQItxkjh3snTTyam2wAf3XBrRSW7j" type="hidden">
-		<fieldset id="criteria_form" class="search-fieldset">
-		<legend>Build Search Criteria</legend>
-		<label>Select Grouping Operation</label>
-		</br>
-		<div class="and-or-group">
-		<span id="and_grouping">
-		<label class="radio-inline" for="grouping_and">AND</label>
-		<input name="grouping" checked="checked" id="grouping_and" value="and" type="radio">
-		</span>
+    	<div class="advanced-search">
+			<form role="form" id="build_search" name="build_search" onsubmit="return false;">
+				<div class="form-group">
+					<input name="csrfmiddlewaretoken" value="e1UjQItxkjh3snTTyam2wAf3XBrRSW7j" type="hidden">
+					<fieldset id="criteria_form" class="search-fieldset">
+						<legend>Build Search Criteria</legend>
+						<label>Select Grouping Operation</label>
+						</br>
+						<div class="and-or-group">
+							<span id="and_grouping">
+								<label class="radio-inline" for="grouping_and">AND</label>
+								<input name="grouping" checked="checked" id="grouping_and" value="and" type="radio">
+							</span>
 
-		<span id="or_grouping">
-		<label class="radio-inline" for="grouping_or">OR</label>
-		<input name="grouping" id="grouping_or" value="or" type="radio">
-		</span>
-		</div>
+							<span id="or_grouping">
+								<label class="radio-inline" for="grouping_or">OR</label>
+								<input name="grouping" id="grouping_or" value="or" type="radio">
+							</span>
+						</div>
 
-		<label for="search_types">Select Search Type</label>
+						<label for="search_types">Select Search Type</label>
 
-		<select id="search_types" name="search_types">
-		    <option value="contains">contains</option>
-		    <option value="not_contains">does not contain</option>
-		    <option value="exact">exact</option>
-		    <option value="not_equal">does not equal</option>
-		    <option value="starts">starts with</option>
-		    <option value="not_start">does not start with</option>
-		    <option value="ends">ends with</option>
-		    <option value="not_end">does not end with</option>
-		    <option value="regex">regex</option>
-		    <option value="lte">lte</option>
-		    <option value="gte">gte</option>
-		</select>
+						<select id="search_types" class="form-control" name="search_types">
+						    <option value="contains">contains</option>
+						    <option value="not_contains">does not contain</option>
+						    <option value="exact">exact</option>
+						    <option value="not_equal">does not equal</option>
+						    <option value="starts">starts with</option>
+						    <option value="not_start">does not start with</option>
+						    <option value="ends">ends with</option>
+						    <option value="not_end">does not end with</option>
+						    <option value="regex">regex</option>
+						    <option value="lte">lte</option>
+						    <option value="gte">gte</option>
+						</select>
 
+						<label for="field_list">Select Field to Search</label>
+						<select class="form-control" name="field_list" id="field_list" aria-label="search field">    
+						        <option value="address__city">address__city</option>
+						    
+						        <option value="address__line_1">address__line_1</option>
+						    
+						        <option value="vhost_additional_nic">vhost_additional_nic</option>
+						</select>
 
-		<label for="search_value">Search Text</label>
-		<input name="search_value" id="search_value" value="" type="text">
-
-
-
-		<label for="field_list">Select Field to Search</label>
-		<select name="field_list" id="field_list" aria-label="search field">    
-		        <option value="address__city">address__city</option>
-		    
-		        <option value="address__line_1">address__line_1</option>
-		    
-		        <option value="address__line_2">address__line_2</option>
-		    
-		        <option value="address__line_3">address__line_3</option>
-		    
-		        <option value="address__state">address__state</option>
-		    
-		        <option value="address__type__name">address__type__name</option>
-		    
-		        <option value="address__zip_code">address__zip_code</option>
-		    
-		        <option value="backup_type__name">backup_type__name</option>
-		    
-		        <option value="building_number">building_number</option>
-		    
-		        <option value="comments">comments</option>
-		    
-		        <option value="contact_hours">contact_hours</option>
-		    
-		        <option value="contact_manager_id">contact_manager_id</option>
-		    
-		        <option value="contains_sensitive_info">contains_sensitive_info</option>
-		    
-		        <option value="create_date">create_date</option>
-		    
-		        <option value="criticality__name">criticality__name</option>
-		    
-		        <option value="department">department</option>
-		    
-		        <option value="description">description</option>
-		    
-		        <option value="dimensions">dimensions</option>
-		    
-		        <option value="equipment_name">equipment_name</option>
-		    
-		        <option value="id">id</option>
-		    
-		        <option value="install_status__name">install_status__name</option>
-		    
-		        <option value="inventory_tag">inventory_tag</option>
-		    
-		        <option value="ipv4_address">ipv4_address</option>
-		    
-		        <option value="ipv4_address_high">ipv4_address_high</option>
-		    
-		        <option value="ipv4_address_low">ipv4_address_low</option>
-		    
-		        <option value="ipv4_network">ipv4_network</option>
-		    
-		        <option value="ipv6_address">ipv6_address</option>
-		    
-		        <option value="ipv6_address_high">ipv6_address_high</option>
-		    
-		        <option value="ipv6_address_low">ipv6_address_low</option>
-		    
-		        <option value="ipv6_network">ipv6_network</option>
-		    
-		        <option value="last_audit_date">last_audit_date</option>
-		    
-		        <option value="last_update_date">last_update_date</option>
-		    
-		        <option value="location__name">location__name</option>
-		    
-		        <option value="logical_delete">logical_delete</option>
-		    
-		        <option value="mac_address">mac_address</option>
-		    
-		        <option value="maintenance_end_time">maintenance_end_time</option>
-		    
-		        <option value="maintenance_start_time">maintenance_start_time</option>
-		    
-		        <option value="model_number">model_number</option>
-		    
-		        <option value="model_ptr">model_ptr</option>
-		    
-		        <option value="model_ptr__content_type__name">model_ptr__content_type__name</option>
-		    
-		        <option value="model_type__name">model_type__name</option>
-		    
-		        <option value="modelbuilding__building__building_number">modelbuilding__building__building_number</option>
-		    
-		        <option value="modelcontact__contact__contactgroup__name">modelcontact__contact__contactgroup__name</option>
-		    
-		        <option value="modelcontact__contact__netidcontact__netid">modelcontact__contact__netidcontact__netid</option>
-		    
-		        <option value="modelcontact__contact__nonnetidcontact__name">modelcontact__contact__nonnetidcontact__name</option>
-		    
-		        <option value="modelcontact__type__name">modelcontact__type__name</option>
-		    
-		        <option value="monitoring__name">monitoring__name</option>
-		    
-		        <option value="mount_type">mount_type</option>
-		    
-		        <option value="multiple_sites">multiple_sites</option>
-		    
-		        <option value="name">name</option>
-		    
-		        <option value="netid">netid</option>
-		    
-		        <option value="network_device_type__name">network_device_type__name</option>
-		    
-		        <option value="node">node</option>
-		    
-		        <option value="node_number">node_number</option>
-		    
-		        <option value="number_audit_notifications">number_audit_notifications</option>
-		    
-		        <option value="number_of_power_feeds">number_of_power_feeds</option>
-		    
-		        <option value="out_of_office">out_of_office</option>
-		    
-		        <option value="owner_code">owner_code</option>
-		    
-		        <option value="owner_sub_code">owner_sub_code</option>
-		    
-		        <option value="power_specs">power_specs</option>
-		    
-		        <option value="rating">rating</option>
-		    
-		        <option value="role">role</option>
-		    
-		        <option value="role_instance_models__ad_sam_account_name">role_instance_models__ad_sam_account_name</option>
-		    
-		        <option value="role_instance_models__role__name">role_instance_models__role__name</option>
-		    
-		        <option value="serial_number">serial_number</option>
-		    
-		        <option value="service_alias">service_alias</option>
-		    
-		        <option value="service_level__name">service_level__name</option>
-		    
-		        <option value="short_name">short_name</option>
-		    
-		        <option value="size">size</option>
-		    
-		        <option value="sld">sld</option>
-		    
-		        <option value="status__name">status__name</option>
-		    
-		        <option value="support_hours__name">support_hours__name</option>
-		    
-		        <option value="survival_time">survival_time</option>
-		    
-		        <option value="team_name">team_name</option>
-		    
-		        <option value="team_role">team_role</option>
-		    
-		        <option value="title">title</option>
-		    
-		        <option value="uin">uin</option>
-		    
-		        <option value="units">units</option>
-		    
-		        <option value="url">url</option>
-		    
-		        <option value="vendor_documentation">vendor_documentation</option>
-		    
-		        <option value="vendor_information">vendor_information</option>
-		    
-		        <option value="vendor_name">vendor_name</option>
-		    
-		        <option value="vhost_additional_nic">vhost_additional_nic</option>
-		</select>
-
-		<input id="add_search" onclick="add_search_criteria();" value="Add to Search Criteria" type="submit">
-
-		</fieldset>
-		</form>
+						<div class="form-group">
+							<label for="search_value">Search Text</label>
+							<input name="search_value" id="search_value" value="" type="text" class="form-control" placeholder="Enter Query">
+						</div>
 
 
 
+						
+						<button id="add_search" onclick="add_search_criteria();" type="submit">
+							<i class="glyphicon glyphicon-plus"></i>
+							 Add to Search Criteria
+						</button>
+					</fieldset>
+				</div> <!-- form group div -->				
+			</form> <!-- build search form-->
 
 
-		<form id="search" method="POST" onsubmit="return handle_submit()">
-		<input name="csrfmiddlewaretoken" value="e1UjQItxkjh3snTTyam2wAf3XBrRSW7j" type="hidden">
+			<form id="search" method="POST" onsubmit="return handle_submit()">
+				<input name="csrfmiddlewaretoken" value="e1UjQItxkjh3snTTyam2wAf3XBrRSW7j" type="hidden">
 
-		<fieldset id="search_form" class="search-fieldset">
-		<legend>Search Criteria</legend>
-		<select multiple="multiple" name="search_criteria" id="search_criteria" size="6" aria-label="built search criteria">
+				<fieldset id="search_form" class="search-fieldset">
+					
+					<legend>Search Criteria</legend>
+					<div id="search-criteria-region">
+						<select multiple="multiple" name="search_criteria" id="search_criteria" size="6" aria-label="built search criteria" class="pull-left">
+							<option value="::address__city::starts::urbana"> address__city starts urbana</option>
+							<option value="or::::address__city::starts::champaign">or  address__city starts champaign</option>
+						</select>
+						<div id="remove_selected">
+							<button onclick="button_pressed=this.value" type="submit"><i class="glyphicon glyphicon-remove"></i> Remove Selected</button>
+						</div>
 
-		<option value="::address__city::starts::urbana"> address__city starts urbana</option><option value="or::::address__city::starts::champaign">or  address__city starts champaign</option>
-		</select>
+					</div>
 
-		<div>
-		<button onclick="button_pressed=this.value" type="submit">Remove Selected</button>
-		<button onclick="button_pressed=this.value" type="submit">Reset Search</button>
-		</div>
-		<input name="Search" value="Submit Search" onclick="button_pressed=this.value" type="submit" class="field-submit-button">
-		</fieldset>
-		</form>
-
-
-
-
-		</div>
-
+					<div>
+						<button onclick="button_pressed=this.value" type="submit">Reset Search</button>
+					</div>
+					<input id="submit-advanced-search" name="Search" value="Submit Search" onclick="button_pressed=this.value" type="submit" class="field-submit-button">
+				</fieldset>
+			</form>
+		</div><!--advanced-search div-->
     </div>
 
-  </div>
-
-</div>
+</div> <!---tab-content div-->
 
 
 
