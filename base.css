@@ -173,13 +173,6 @@ input[type="submit"]{
     margin-top: 10px;
 }
 
-input[type="text"]:focus{
-  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-  padding: 3px 0px 3px 3px;
-  margin: 5px 1px 3px 0px;
-  border: 1px solid rgba(81, 203, 238, 1);
-}
-
 .and-or-group{
     display: block;
 }
@@ -199,7 +192,7 @@ input[type="text"]:focus{
 
 #search-criteria-region{
     display: block;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 .panel-content{
@@ -281,6 +274,10 @@ legend{
     position: absolute;
     padding: 10px;
     pointer-events: none;
+}
+
+.search-criteria-button{
+   margin-bottom: 10px;
 }
 
 /*.tab-content{
