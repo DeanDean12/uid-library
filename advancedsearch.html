@@ -52,7 +52,7 @@
 				<div class="form-group">
 					<div class="inner-addon left-addon">
 						<i class="glyphicon glyphicon-search"></i>
-						<input type="text" placeholder="    Enter Query" class="form-control main-search-field">
+						<input type="text" placeholder="    Search" class="form-control main-search-field">
 						<button type="submit" class="btn btn-default submit_button" id="example-submit">Search</button>
 					</div>
 				</div>
@@ -61,14 +61,35 @@
     </div>
     <div role="tabpanel" class="tab-pane" id="advanced_search">
     	<div class="advanced-search">
-			<form role="form" id="build_search" name="build_search" onsubmit="return false;">
-				<div class="form-group">
+			<form class="form-inline" role="form" id="build_search" name="build_search" onsubmit="return false;">
+				<div class="form-group" style="width:100%;">
 					<input name="csrfmiddlewaretoken" value="e1UjQItxkjh3snTTyam2wAf3XBrRSW7j" type="hidden">
 					<fieldset id="criteria_form" class="search-fieldset">
 						<legend>Build Search Criteria</legend>
 						<label>Select Grouping Operation</label>
 						</br>
-						<div class="and-or-group">
+
+
+
+
+
+
+						<div class="btn-group" data-toggle="buttons">
+						  <label class="btn btn-primary active">
+						    <input type="radio" name="and" id="option1" autocomplete="off" checked>AND
+						  </label>
+						  <label class="btn btn-primary">
+						    <input type="radio" name="or" id="option2" autocomplete="off">OR
+						  </label>
+						</div>
+
+
+
+
+
+
+
+						<!--<div class="and-or-group">
 							<span id="and_grouping">
 								<label class="radio-inline" for="grouping_and">AND</label>
 								<input name="grouping" checked="checked" id="grouping_and" value="and" type="radio">
@@ -78,10 +99,18 @@
 								<label class="radio-inline" for="grouping_or">OR</label>
 								<input name="grouping" id="grouping_or" value="or" type="radio">
 							</span>
-						</div>
+						</div>-->
 
-						<label for="search_types">Select Search Type</label>
+						<label class="sr-only" for="field_list">Select Field to Search</label>
+						<select class="form-control" name="field_list" id="field_list" aria-label="search field">    
+						        <option value="address__city">address__city</option>
+						    
+						        <option value="address__line_1">address__line_1</option>
+						    
+						        <option value="vhost_additional_nic">vhost_additional_nic</option>
+						</select>
 
+						<label class="sr-only" for="search_types">Select Search Type</label>
 						<select id="search_types" class="form-control" name="search_types">
 						    <option value="contains">contains</option>
 						    <option value="not_contains">does not contain</option>
@@ -96,27 +125,19 @@
 						    <option value="gte">gte</option>
 						</select>
 
-						<label for="field_list">Select Field to Search</label>
-						<select class="form-control" name="field_list" id="field_list" aria-label="search field">    
-						        <option value="address__city">address__city</option>
-						    
-						        <option value="address__line_1">address__line_1</option>
-						    
-						        <option value="vhost_additional_nic">vhost_additional_nic</option>
-						</select>
-
-						<div class="form-group">
-							<label for="search_value">Search Text</label>
+						<!--<div class="form-group">-->
+							<label class="sr-only" for="search_value">Search Text</label>
 							<input name="search_value" id="search_value" value="" type="text" class="form-control" placeholder="Enter Query">
+						<!--</div>-->
+
+
+
+						<div>
+							<button id="add_search" onclick="add_search_criteria();" type="submit">
+								<i class="glyphicon glyphicon-plus"></i>
+								 Add to Search Criteria
+							</button>
 						</div>
-
-
-
-						
-						<button id="add_search" onclick="add_search_criteria();" type="submit">
-							<i class="glyphicon glyphicon-plus"></i>
-							 Add to Search Criteria
-						</button>
 					</fieldset>
 				</div> <!-- form group div -->				
 			</form> <!-- build search form-->
@@ -128,6 +149,72 @@
 				<fieldset id="search_form" class="search-fieldset">
 					
 					<legend>Search Criteria</legend>
+
+
+
+
+
+
+
+        <div class="table-responsive search-table">
+            <table class="table table-hover table-condensed">
+    			<thead>
+    				<tr>
+    					<th>Group Operation</th>
+    					<th>Search Field</th>
+    					<th>Search Type</th>
+    					<th>Search Text</th>
+    					<th></th>
+    				</tr>
+    			</thead>
+
+    			<tbody>
+    				<tr>
+                        <td></td>
+    					<td>address_city</td>
+    					<td>STARTS WITH</td>
+    					<td>Champaign</td>
+    					<td>
+    						<a class='btn btn-info btn-xs' href="#">
+    							<span class="glyphicon glyphicon-edit"></span> Edit
+    						</a> 
+    						<a href="#" class="btn btn-danger btn-xs">
+    							<span class="glyphicon glyphicon-remove"></span> Delete
+    						</a>
+    					</td>
+                    </tr>
+
+    				<tr>
+                        <td>OR</td>
+    					<td>address_city</td>
+    					<td>STARTS WITH</td>
+    					<td>Urbana</td>
+    					<td>
+    						<a class='btn btn-info btn-xs' href="#">
+    							<span class="glyphicon glyphicon-edit"></span> Edit
+    						</a> 
+    						<a href="#" class="btn btn-danger btn-xs">
+    							<span class="glyphicon glyphicon-remove"></span> Delete
+    						</a>
+    					</td>
+                    </tr>
+                
+	               </tbody>
+
+    		</table>
+    	</div> <!--div for table-->
+
+
+
+
+
+
+
+
+
+
+
+
 					<div id="search-criteria-region">
 						<select multiple="multiple" name="search_criteria" id="search_criteria" size="6" aria-label="built search criteria" class="pull-left">
 							<option value="::address__city::starts::urbana"> address__city starts urbana</option>

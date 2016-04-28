@@ -18,7 +18,7 @@ html, body{
     color: #444D56;
 }
 
-.form-control{width:20%}
+/*.form-control{width:20%}*/
 
 .banner-header{
     position: fixed;
@@ -207,7 +207,7 @@ input[type="submit"]{
 .search-fieldset{
     margin: auto;
     display: block;
-    width: 80%;
+    width: 85%;
     text-align: center;
 }
 
@@ -279,6 +279,11 @@ legend{
 .search-criteria-button{
    margin-bottom: 10px;
 }
+
+.search-table{
+    max-width: 100%;
+}
+
 
 /*.tab-content{
     background-color: yellow;
