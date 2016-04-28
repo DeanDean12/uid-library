@@ -282,8 +282,21 @@ legend{
 
 .search-table{
     max-width: 100%;
+    background-color: white;
 }
 
+.search-table table{
+    border-collapse: separate; 
+    border-spacing: 5px;
+}
+
+.search-table > table > thead > tr > th { 
+    border: none; 
+}
+
+.search-table > table > tbody > tr > td { 
+    border: none; 
+}
 
 /*.tab-content{
     background-color: yellow;

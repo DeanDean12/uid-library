@@ -114,7 +114,7 @@
 						<select id="search_types" class="form-control" name="search_types">
 						    <option value="contains">contains</option>
 						    <option value="not_contains">does not contain</option>
-						    <option value="exact">exact</option>
+						    <option value="exact">equals</option>
 						    <option value="not_equal">does not equal</option>
 						    <option value="starts">starts with</option>
 						    <option value="not_start">does not start with</option>
@@ -199,6 +199,21 @@
     					</td>
                     </tr>
                 
+                	<tr>
+                        <td>AND</td>
+    					<td>state</td>
+    					<td>STARTS WITH</td>
+    					<td>IL</td>
+    					<td>
+    						<a class='btn btn-info btn-xs' href="#">
+    							<span class="glyphicon glyphicon-edit"></span> Edit
+    						</a> 
+    						<a href="#" class="btn btn-danger btn-xs">
+    							<span class="glyphicon glyphicon-remove"></span> Delete
+    						</a>
+    					</td>
+                    </tr>
+
 	               </tbody>
 
     		</table>
@@ -215,24 +230,10 @@
 
 
 
-					<div id="search-criteria-region">
-						<select multiple="multiple" name="search_criteria" id="search_criteria" size="6" aria-label="built search criteria" class="pull-left">
-							<option value="::address__city::starts::urbana"> address__city starts urbana</option>
-							<option value="or::::address__city::starts::champaign">or  address__city starts champaign</option>
-						</select>
 						<div id="remove_selected">
 							<button onclick="button_pressed=this.value" type="submit" class="search-criteria-button"><i class="glyphicon glyphicon-remove"></i> Remove Selected</button>
-                            <div>
-                                <button onclick="button_pressed=this.value" type="submit" class="search-criteria-button">Reset Search</button>
-                            </div>
 
 						</div>
-
-					</div>
-
-					<div>
-						<button onclick="button_pressed=this.value" type="submit">Reset Search</button>
-					</div>
 					<input id="submit-advanced-search" name="Search" value="Submit Search" onclick="button_pressed=this.value" type="submit" class="field-submit-button">
 				</fieldset>
 			</form>
