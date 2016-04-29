@@ -191,6 +191,12 @@ input[type="submit"]{
     color: #263B54;
 }
 
+#bootstrap-overrides #submit-advanced-search:hover{
+    color: white;
+    background-color: #363d44;
+
+}
+
 #bootstrap-overrides .edit-button{
     background: #D4DADD;
     color: #363d44;
