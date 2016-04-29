@@ -53,7 +53,7 @@
 					<div class="inner-addon left-addon">
 						<i class="glyphicon glyphicon-search"></i>
 						<input type="text" placeholder="    Search" class="form-control main-search-field">
-						<button type="submit" class="btn btn-default submit_button" id="example-submit">Search</button>
+						<button type="submit" class="btn btn-default special-submit-button" id="example-submit">Search</button>
 					</div>
 				</div>
 			</form>
@@ -65,23 +65,24 @@
 				<div class="form-group" style="width:100%;">
 					<input name="csrfmiddlewaretoken" value="e1UjQItxkjh3snTTyam2wAf3XBrRSW7j" type="hidden">
 					<fieldset id="criteria_form" class="search-fieldset">
-						<legend>Build Search Criteria</legend>
-						<label>Select Grouping Operation</label>
-						</br>
+						<legend class="criteria-legend">Build Search Criteria</legend>
+						<div class="build-search-table">
+							<label class="sr-only">Select Grouping Operation</label>
+							</br>
 
 
 
 
 
 
-						<div class="btn-group" data-toggle="buttons">
-						  <label class="btn btn-primary active">
-						    <input type="radio" name="and" id="option1" autocomplete="off" checked>AND
-						  </label>
-						  <label class="btn btn-primary">
-						    <input type="radio" name="or" id="option2" autocomplete="off">OR
-						  </label>
-						</div>
+							<div class="btn-group" data-toggle="buttons">
+							  <label class="btn btn-primary active">
+							    <input type="radio" name="and" id="option1" autocomplete="off" checked>AND
+							  </label>
+							  <label class="btn btn-primary">
+							    <input type="radio" name="or" id="option2" autocomplete="off">OR
+							  </label>
+							</div>
 
 
 
@@ -89,55 +90,86 @@
 
 
 
-						<!--<div class="and-or-group">
-							<span id="and_grouping">
-								<label class="radio-inline" for="grouping_and">AND</label>
-								<input name="grouping" checked="checked" id="grouping_and" value="and" type="radio">
-							</span>
+							<!--<div class="and-or-group">
+								<span id="and_grouping">
+									<label class="radio-inline" for="grouping_and">AND</label>
+									<input name="grouping" checked="checked" id="grouping_and" value="and" type="radio">
+								</span>
 
-							<span id="or_grouping">
-								<label class="radio-inline" for="grouping_or">OR</label>
-								<input name="grouping" id="grouping_or" value="or" type="radio">
-							</span>
-						</div>-->
+								<span id="or_grouping">
+									<label class="radio-inline" for="grouping_or">OR</label>
+									<input name="grouping" id="grouping_or" value="or" type="radio">
+								</span>
+							</div>-->
 
-						<label class="sr-only" for="field_list">Select Field to Search</label>
-						<select class="form-control" name="field_list" id="field_list" aria-label="search field">    
-						        <option value="address__city">address__city</option>
-						    
-						        <option value="address__line_1">address__line_1</option>
-						    
-						        <option value="vhost_additional_nic">vhost_additional_nic</option>
-						</select>
+							<label class="sr-only" for="field_list">Select Field to Search</label>
+							<select class="form-control" name="field_list" id="field_list" aria-label="search field">    
+									<option value="" disabled selected>Select Field to Search</option>
 
-						<label class="sr-only" for="search_types">Select Search Type</label>
-						<select id="search_types" class="form-control" name="search_types">
-						    <option value="contains">contains</option>
-						    <option value="not_contains">does not contain</option>
-						    <option value="exact">equals</option>
-						    <option value="not_equal">does not equal</option>
-						    <option value="starts">starts with</option>
-						    <option value="not_start">does not start with</option>
-						    <option value="ends">ends with</option>
-						    <option value="not_end">does not end with</option>
-						    <option value="regex">regex</option>
-						    <option value="lte">lte</option>
-						    <option value="gte">gte</option>
-						</select>
+							        <option value="address__city" >address__city</option>
+    
+							        <option value="address__line_1" >address__line_1</option>
+							    
+							        <option value="address__line_2" >address__line_2</option>
+							    
+							        <option value="address__line_3" >address__line_3</option>
+							    
+							        <option value="address__state" >address__state</option>
+							    
+							        <option value="address__type__name" >address__type__name</option>
+							    
+							        <option value="address__zip_code" >address__zip_code</option>
+							    
+							        <option value="backup_type__name" >backup_type__name</option>
+							    
+							        <option value="building_number" >building_number</option>
+							    
+							        <option value="comments" >comments</option>
+							    
+							        <option value="contact_hours" >contact_hours</option>
+							    
+							        <option value="contact_manager_id" >contact_manager_id</option>
+							    
+							        <option value="contains_sensitive_info" >contains_sensitive_info</option>
+							    
+							        <option value="create_date" >create_date</option>
+							    
+							        <option value="criticality__name" >criticality__name</option>
+							    
+							        <option value="department" >department</option>
+							    
+							        <option value="description" >description</option>
+							</select>
 
-						<!--<div class="form-group">-->
-							<label class="sr-only" for="search_value">Search Text</label>
-							<input name="search_value" id="search_value" value="" type="text" class="form-control" placeholder="Enter Query">
-						<!--</div>-->
+							<label class="sr-only" for="search_types">Select Search Type</label>
+							<select id="search_types" class="form-control" name="search_types">
+								<option value="" disabled selected>Select Search Type</option>
+							    <option value="contains">contains</option>
+							    <option value="not_contains">does not contain</option>
+							    <option value="exact">equals</option>
+							    <option value="not_equal">does not equal</option>
+							    <option value="starts">starts with</option>
+							    <option value="not_start">does not start with</option>
+							    <option value="ends">ends with</option>
+							    <option value="not_end">does not end with</option>
+							    <option value="regex">regex</option>
+							    <option value="lte">lte</option>
+							    <option value="gte">gte</option>
+							</select>
 
+							<!--<div class="form-group">-->
+								<label class="sr-only" for="search_value">Search Text</label>
+								<input name="search_value" id="search_value" value="" type="text" class="form-control" placeholder="Search Text">
+							<!--</div>-->
+							<div>
+								<button id="add_search" onclick="add_search_criteria();" type="submit">
+									<i class="glyphicon glyphicon-plus"></i>
+									 Add to Search Criteria
+								</button>
+							</div>
+						</div> <!--build search div-->
 
-
-						<div>
-							<button id="add_search" onclick="add_search_criteria();" type="submit">
-								<i class="glyphicon glyphicon-plus"></i>
-								 Add to Search Criteria
-							</button>
-						</div>
+						
 					</fieldset>
 				</div> <!-- form group div -->				
 			</form> <!-- build search form-->
@@ -148,7 +180,7 @@
 
 				<fieldset id="search_form" class="search-fieldset">
 					
-					<legend>Search Criteria</legend>
+					<legend class="criteria-legend">Search Criteria</legend>
 
 
 
@@ -157,8 +189,8 @@
 
 
         <div class="table-responsive search-table">
-            <table class="table table-hover table-condensed">
-    			<thead>
+            <table class="table table-condensed table-striped">
+    			<!--<thead>
     				<tr>
     					<th>Group Operation</th>
     					<th>Search Field</th>
@@ -166,49 +198,49 @@
     					<th>Search Text</th>
     					<th></th>
     				</tr>
-    			</thead>
+    			</thead>-->
 
     			<tbody>
     				<tr>
                         <td></td>
     					<td>address_city</td>
-    					<td>STARTS WITH</td>
+    					<td class="query-specifics">STARTS WITH</td>
     					<td>Champaign</td>
     					<td>
-    						<a class='btn btn-info btn-xs' href="#">
+    						<a class="btn btn-info btn-xs edit-delete-button-pair edit-button" href="#">
     							<span class="glyphicon glyphicon-edit"></span> Edit
     						</a> 
-    						<a href="#" class="btn btn-danger btn-xs">
+    						<a href="#" class="btn btn-danger btn-xs edit-delete-button-pair">
     							<span class="glyphicon glyphicon-remove"></span> Delete
     						</a>
     					</td>
                     </tr>
 
     				<tr>
-                        <td>OR</td>
+                        <td class="query-specifics">OR</td>
     					<td>address_city</td>
-    					<td>STARTS WITH</td>
+    					<td class="query-specifics">STARTS WITH</td>
     					<td>Urbana</td>
     					<td>
-    						<a class='btn btn-info btn-xs' href="#">
+    						<a class="btn btn-info btn-xs edit-delete-button-pair edit-button" href="#">
     							<span class="glyphicon glyphicon-edit"></span> Edit
     						</a> 
-    						<a href="#" class="btn btn-danger btn-xs">
+    						<a href="#" class="btn btn-danger btn-xs edit-delete-button-pair">
     							<span class="glyphicon glyphicon-remove"></span> Delete
     						</a>
     					</td>
                     </tr>
                 
                 	<tr>
-                        <td>AND</td>
+                        <td class="query-specifics">AND</td>
     					<td>state</td>
-    					<td>STARTS WITH</td>
+    					<td class="query-specifics">STARTS WITH</td>
     					<td>IL</td>
     					<td>
-    						<a class='btn btn-info btn-xs' href="#">
+    						<a class="btn btn-info btn-xs edit-delete-button-pair edit-button" href="#">
     							<span class="glyphicon glyphicon-edit"></span> Edit
     						</a> 
-    						<a href="#" class="btn btn-danger btn-xs">
+    						<a href="#" class="btn btn-danger btn-xs edit-delete-button-pair">
     							<span class="glyphicon glyphicon-remove"></span> Delete
     						</a>
     					</td>
@@ -230,11 +262,13 @@
 
 
 
-						<div id="remove_selected">
-							<button onclick="button_pressed=this.value" type="submit" class="search-criteria-button"><i class="glyphicon glyphicon-remove"></i> Remove Selected</button>
+	
+					<button id="submit-advanced-search" name="Search" onclick="button_pressed=this.value" type="submit" class="field-submit-button">Submit Search</button>
 
-						</div>
-					<input id="submit-advanced-search" name="Search" value="Submit Search" onclick="button_pressed=this.value" type="submit" class="field-submit-button">
+					<!--<span id="remove_selected">-->
+							<button onclick="button_pressed=this.value" type="submit" class="search-criteria-button"><i class="glyphicon glyphicon-remove"></i> Reset Search</button>
+
+					<!--</span>-->
 				</fieldset>
 			</form>
 		</div><!--advanced-search div-->

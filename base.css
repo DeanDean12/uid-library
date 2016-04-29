@@ -121,6 +121,8 @@ a:hover{
     outline: #FA2 solid 3px;
 }
 
+/******************buttons******************************/
+
 
 #bootstrap-overrides button, input[type="submit"]{
     display: inline-block;
@@ -132,6 +134,29 @@ a:hover{
     //line-height: normal;
     
     transition: all 250ms ease-out;
+}
+
+
+input[type="submit"]{
+    /*background-color: #FA6300;*/
+    color: #263B54;
+    background-color: #FA6300;
+    border: none;
+}
+
+#bootstrap-overrides input[type="submit"]:hover{ 
+    /*background-color: #6e7887;*/
+    color: #263B54;
+    background-color: #FA6300;
+}
+
+
+#bootstrap-overrides .special-submit-button{
+    border-radius: .5em;
+}
+
+#bootstrap-overrides #add_search{
+    margin-top: 10px;
 }
 
 #bootstrap-overrides button{
@@ -148,30 +173,41 @@ a:hover{
     color: #263B54;
     background-color: #FA6300;
 }
-input[type="submit"]{
-    /*background-color: #FA6300;*/
+
+
+.field-submit-button{
+    display: block;
+    padding: 10px;
     color: #263B54;
     background-color: #FA6300;
+}
+
+#bootstrap-overrides .search-criteria-button{
+    background-color: #363d44;
+}
+
+#bootstrap-overrides #submit-advanced-search{
+    background-color: #FA6300;
+    color: #263B54;
+}
+
+#bootstrap-overrides .edit-button{
+    background: #D4DADD;
+    color: #363d44;
+}
+
+#bootstrap-overrides .edit-delete-button-pair{
+    width: auto;
     border: none;
 }
 
-#bootstrap-overrides input[type="submit"]:hover{ 
-    /*background-color: #6e7887;*/
-    color: #263B54;
-    background-color: #FA6300;
-}
+#bootstrap-overrides .edit-delete-button-pair:hover{
+    text-decoration: none;
+    padding: 0px 5px 0px 5px;
+    cursor: pointer;
 
-#bootstrap-overrides button[type="submit"]{
-    border-radius: 8px;
 }
-
-#bootstrap-overrides #add_search{
-    border-radius: 5em;
-}
-
-#submit-advanced-search{
-    margin-top: 10px;
-}
+/*****************************************************/
 
 .and-or-group{
     display: block;
@@ -182,12 +218,9 @@ input[type="submit"]{
     margin-bottom: 3px;
 }
 
-#search_criteria{
-    display: block;
+#search_form{
+    margin-top: 50px;
     margin-bottom: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 75%;
 }
 
 #search-criteria-region{
@@ -211,15 +244,11 @@ input[type="submit"]{
     text-align: center;
 }
 
-.field-submit-button{
-    display: block;
-    padding: 10px;
-    color: #263B54;
-    background-color: #FA6300;
-}
+
 
 .tabbed-search-box{
     width: 75%;
+    margin-bottom: 40px;
 }
 
 .tabbed-search-box .tab-pane{ 
@@ -259,7 +288,7 @@ legend{
 }
 
 .advanced-search{
-    padding: 10px 0px 10px 0px;
+    padding: 30px 0px 10px 0px;
 }
 
 .inner-addon {
@@ -276,18 +305,23 @@ legend{
     pointer-events: none;
 }
 
-.search-criteria-button{
-   margin-bottom: 10px;
+.build-search-table{
+    padding-bottom: 10px;
 }
 
-.search-table{
+.search-table, .build-search-table{
     max-width: 100%;
     background-color: white;
+    border-top-color: #34466b;
+    border-radius: .25em;
+    margin-bottom: 15px;
 }
 
 .search-table table{
     border-collapse: separate; 
-    border-spacing: 5px;
+    border-spacing: 0px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .search-table > table > thead > tr > th { 
@@ -296,8 +330,28 @@ legend{
 
 .search-table > table > tbody > tr > td { 
     border: none; 
+    font-weight: 600;
+    color: #263b54;
 }
 
+#bootstrap-overrides .criteria-legend{
+    margin-bottom: 0px;
+    padding: 3px;
+    font-size: 21px;
+    font-family: proxima-nova-alt,sans-serif;
+    font-weight: 400;
+    border-top-left-radius: .25em;
+    border-top-right-radius: .25em;
+    border-bottom: #FA6300 10px solid;
+    background-color: #34466b;
+    color: white;
+}
+
+#bootstrap-overrides .query-specifics{
+    color: #FA6300;
+    font-weight: 600;
+    font-size: 13px;
+}
 /*.tab-content{
     background-color: yellow;
     color:#fff;
