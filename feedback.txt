@@ -1,0 +1,12 @@
+Be able to rearrange the order of the query
+Update the And/OR color button or dark grey and light grey
+black text and OR/AND blue
+data table
+indicate number of results
+http://bootsnipp.com/snippets/featured/advanced-dropdown-search
+small 16px
+large 16px or larger
+contrast on tabs
+Reset - grey with black or navy blue
+submit - dark blue with white text
+https://addons.mozilla.org/en-US/firefox/addon/ainspector-sidebar/
