@@ -240,9 +240,9 @@ input[type="submit"]{
     width: 80%;
 }
 
-.active-search-tab{
-    background-color: purple;
-}
+/*.active-search-tab{
+    background-color: yellow;
+}*/
 
 .search-fieldset{
     margin: auto;
@@ -263,9 +263,11 @@ input[type="submit"]{
     border-top: 0;  
 }
 
+
 #tabbed-box li a { 
     border-color: #D6D6D6;
-    background-color: #90ABBD; 
+    background-color: #c0c4c7;
+    color: black;
 }
 
 #tabbed-box li.active a { 
@@ -358,6 +360,25 @@ legend{
     color: #FA6300;
     font-weight: 600;
     font-size: 13px;
+}
+
+#bootstrap-overrides .btn-primary{
+   /* box-shadow: inset 0px 0px 10px #263b54;
+    background-color: #275e8d;*/
+    border: none;
+    box-shadow: inset 0px 3px 6px -1px #232323;
+    background-color: #b2b9c3;
+    color: black;
+}
+
+#bootstrap-overrides .btn-primary.active{
+    box-shadow: inset 0px 0px 10px #263b54;
+    background-color: #2473b7;
+    color: white;
+    /*
+    box-shadow: inset 2px 2px 3px 0px #020304;
+
+    background-color: #5580a5;*/
 }
 /*.tab-content{
     background-color: yellow;

@@ -1,5 +1,4 @@
 Be able to rearrange the order of the query
-Update the And/OR color button or dark grey and light grey
 black text and OR/AND blue
 data table
 indicate number of results
@@ -12,3 +11,4 @@ https://addons.mozilla.org/en-US/firefox/addon/ainspector-sidebar
 Finished
 Reset - grey with black or navy blue
 submit - dark blue with white text
+Update the And/OR color button or dark grey and light grey
