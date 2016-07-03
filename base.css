@@ -183,19 +183,20 @@ input[type="submit"]{
 }
 
 #bootstrap-overrides .search-criteria-button{
-    background-color: #363d44;
+    background-color: #8b969c;
+    color: black;
 }
 
-#bootstrap-overrides #submit-advanced-search{
+/*#bootstrap-overrides #submit-advanced-search{
     background-color: #FA6300;
     color: #263B54;
-}
+}*/
 
-#bootstrap-overrides #submit-advanced-search:hover{
+/*#bootstrap-overrides #submit-advanced-search:hover{
     color: white;
     background-color: #363d44;
 
-}
+}*/
 
 #bootstrap-overrides .edit-button{
     background: #D4DADD;
@@ -253,7 +254,7 @@ input[type="submit"]{
 
 
 .tabbed-search-box{
-    width: 75%;
+    width: 100%;
     margin-bottom: 40px;
 }
 
